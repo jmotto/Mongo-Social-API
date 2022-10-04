@@ -1,6 +1,5 @@
 const router = require('express').Router();
 
-const { modelNames } = require('mongoose');
 const {
 
     getThoughts,
@@ -10,7 +9,7 @@ const {
     deleteThought,
 
 
-} = require('../../controllers/thought-controller');
+} = require('../../controllers/thoughController');
 
 // /api/thoughts
 router.route('/').get(getThoughts).post(createThought);
