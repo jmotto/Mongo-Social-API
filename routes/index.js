@@ -1,21 +1,8 @@
 const router = require('express').Router();
+const apiRoutes = require('./api');
 
-const {
+router.use('/api', apiRoutes);
 
-    getThoughts,
-    getSingleThought,
-    createThought,
-    updateThought,
-    deleteThought,
-
-
-} = require('../../controllers/thoughController');
-
-// /api/thoughts
-router.route('/').get(getThoughts).post(createThought);
-
-
-
-
+router.use((req, res) => res.send('Wrong route!'));
 
 module.exports = router;
