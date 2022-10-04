@@ -22,18 +22,29 @@ const router = require('express').Router();
 
 const {
 
-    getThoughts,
-    getSingleThought,
-    createThought,
-    updateThought,
-    deleteThought,
+    getUsers,
+    getSingleUser,
+    createUser,
+    updateUser,
+    deleteUser,
+    addFriend,
+    removeFriend,
 
+} = require('../../controllers/userController');
 
-} = require('../../controllers/thoughController');
+// get all users /api/users
+router.route('/').get(getUsers).post(createUser);
 
-// /api/thoughts
-router.route('/').get(getThoughts).post(createThought);
+// get single user /api/users/:userId
+router.route('/:userId')
+    .get(getSingleUser)
+    .put(updateUser)
+    .delete(deleteUser);
 
+// /api/users/:userId/friends/:friendId
+router.route('/:userId/friends/:friendId')
+    .post(addFriend)
+    .delete(removeFriend);
 
 
 
