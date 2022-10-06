@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const moment = require('moment');
 
 const userSchema = new Schema (
   {
@@ -14,7 +13,12 @@ const userSchema = new Schema (
       type: String,
       required: true,
       unique: true,
-      // validate: true,
+      validate: {
+        validator: function (v) {
+            return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v);
+        },
+        message: props => `${props.value} is not a valid email address!`
+      },
     },
 
     thoughts: [
@@ -34,6 +38,7 @@ const userSchema = new Schema (
   {
     toJSON: {
       virtuals: true,
+      getters: true
     },
     id: false,
   }

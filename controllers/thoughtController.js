@@ -11,13 +11,21 @@ module.exports = {
   //  GET "/:thoughtId
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
-      .populate("Thought")
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: "No thought with that ID" })
-          : res.json(thought)
-      )
-      .catch((err) => res.status(500).json(err));
+    .populate({
+      path: 'user',
+      select: '-__v'
+    })
+    .populate({
+      path: 'reactions',
+      select: '-__v'
+    })
+    .select('-__v')
+    .then((thought) =>
+      !thought
+        ? res.status(404).json({ message: "No thought with that ID" })
+        : res.json(thought)
+    )
+    .catch((err) => res.status(500).json(err));
   },
   // POST "/:thoughtID"
   createThought( req, res) {
