@@ -41,7 +41,7 @@ module.exports = {
   // PUT ""/:userId""
   // User.findOneAndUpdate( search, { $set: req.body })
   updateUser(req, res) {
-    User.findOneAndUpdate( search, { $set: req.body })
+    User.findOneAndUpdate( { $set: req.body })
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
