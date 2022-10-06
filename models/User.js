@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const moment = require('moment');
 
 const userSchema = new Schema (
   {
@@ -13,7 +14,7 @@ const userSchema = new Schema (
       type: String,
       required: true,
       unique: true,
-      validate: true,
+      // validate: true,
     },
 
     thoughts: [

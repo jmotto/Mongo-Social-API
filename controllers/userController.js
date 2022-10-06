@@ -21,7 +21,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // PUT "/:userId"
+  // POST "/:userId"
   createUser( req, res) {
     User.create(req.body)
       .then((user) => res.json(user))
@@ -47,7 +47,7 @@ module.exports = {
   },
   //  add friend
   addFriend( req, res ) {
-    console.log('You are adding an assignment');
+    console.log('You are adding a friend');
     console.log(req.body);
     User.findOneAndUpdate(
         { _id: req.params.userId},
