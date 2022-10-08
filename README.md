@@ -15,18 +15,21 @@ Mongo Social is an API for a social network web application where users can shar
 
 ## Installation
 The packages required are:
+```json
+dependencies:
+    express: 4.17.1
+    moment: 2.29.4,
+    mongoose: 6.0.13
 
-`dependencies:`
-</br>  `express: 4.17.1`
-</br>  `moment: 2.29.4,`
-</br>  `mongoose": 6.0.13`
-
-`devDependencies:`
-</br>  `nodemon: 2.0.9`
+devDependencies:
+    nodemon: 2.0.9
+```
 
 ## Usage
   
 To launch this application, run `npm start` in the terminal to launch the server. All routes were tested in insomnia. 
+
+Click here for a walkthrough video. 
 
 View the [repository](https://github.com/jmotto/Mongo-Social-API.git) for code. 
 
