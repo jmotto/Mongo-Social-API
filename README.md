@@ -9,7 +9,7 @@ Mongo Social is an API for a social network web application where users can shar
 - [Usage](#usage)
 - [License](#license)
 - [Contributors](#contributors)
-- [Technology Used](#tests)
+- [Technologies](#technologies)
 - [Questions](#questions)
 
 
@@ -27,11 +27,17 @@ devDependencies:
 
 ## Usage
   
-To launch this application, run `npm start` in the terminal to launch the server. All routes were tested in insomnia. 
+To launch this application, run `npm start` in the terminal to launch the server. All routes were tested in Insomnia. 
 
-Click here for a walkthrough video. 
+Click [here](https://drive.google.com/file/d/133H1AAx08BUcTNk290Jg7nX4wX9Gqthi/view?usp=sharing) for a walkthrough video of each route in Insomnia.
 
 View the [repository](https://github.com/jmotto/Mongo-Social-API.git) for code. 
+
+Here is an example image for the Get All Users route and also showing a friend added:
+![get-all-users](assets/images/18-GetAllUsers.png)
+
+Here is an example image for the Get All Thoughts route and also showing a reaction:
+![get-all-thought](assets/images/18-GetAllThoughts.png)
 
 
 ## License
@@ -42,7 +48,7 @@ This application is licensed under [MIT]((https://opensource.org/licenses/MIT)).
 ## Contributors
 Jamie Otto
 
-## Technologies Used:
+## Technologies
 * JavaScript
 * Node
 * Express
